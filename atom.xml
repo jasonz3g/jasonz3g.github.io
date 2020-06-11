@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-06-11T16:26:10.179Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>人的一生应当如何度过</title>
+    <link href="http://yoursite.com/2020/06/11/hello-world/"/>
+    <id>http://yoursite.com/2020/06/11/hello-world/</id>
+    <published>2020-06-11T12:11:44.029Z</published>
+    <updated>2020-06-11T16:26:10.179Z</updated>
+    
+    <content type="html"><![CDATA[<p>每当我思考这个问题，总会陷入漩涡一般。随着年龄的增长，我遇到愈来愈多的难题，不管是关于现实的还是关于理想的，关于物质的或是关于情感的。似乎知识的积累、阅历的丰富，并没有增强我解题的能力。</p><p>“人的一生应当这样度过：当他回首往事时，不因虚度年华而悔恨，不因碌碌无为而羞耻”。我们都被这句名言教导过，我也时常以这句话警醒自己。可是“有为”、“无为”如何界定？是否多学一门手艺、多考一级职称，才算得上有为？我已经很久没有看过诗词、小说了，甚至没有时间学唱一首新歌。让我不禁怀疑，自己的努力是否太过功利？</p><p>在当今这个时代，大街上形形色色的人都低头看着手机，回想起小时候跑去图书馆去“获取信息”、“认识世界”，真是不胜唏嘘–时代发展的真快啊。可是这样的信息爆炸时代，也充斥着大量垃圾信息、低价值信息，干扰我们的视线、浪费我们的时间。即便我如此清晰的意识到这个问题的存在，也偶尔为之所惑，继而又会生出“Live” or “Survive”相关的思考。。。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;每当我思考这个问题，总会陷入漩涡一般。随着年龄的增长，我遇到愈来愈多的难题，不管是关于现实的还是关于理想的，关于物质的或是关于情感的。似乎知识的积累、阅历的丰富，并没有增强我解题的能力。&lt;/p&gt;
+&lt;p&gt;“人的一生应当这样度过：当他回首往事时，不因虚度年华而悔恨，不因碌碌无为
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
