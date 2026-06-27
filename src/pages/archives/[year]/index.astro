@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+import PostLayout from "../../../layouts/PostLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  const years = [...new Set(posts.map((post) => String(post.data.date.getFullYear())))];
+
+  return years.map((year) => ({
+    params: { year },
+    props: {
+      year,
+      posts: posts
+        .filter((post) => String(post.data.date.getFullYear()) === year)
+        .sort((a, b) => b.data.date.getTime() - a.data.date.getTime()),
+    },
+  }));
+}
+
+const { year, posts } = Astro.props;
+---
+
+<PostLayout title={`${year} 年归档`}>
+  {
+    posts.map((post) => (
+      <p>
+        {post.data.date.toISOString().slice(0, 10)}{" "}
+        <a href={`/${post.data.permalink}/`}>{post.data.title}</a>
+      </p>
+    ))
+  }
+</PostLayout>

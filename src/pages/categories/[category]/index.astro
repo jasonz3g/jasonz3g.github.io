@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+import PostLayout from "../../../layouts/PostLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  const categories = [...new Set(posts.map((post) => post.data.category).filter(Boolean))];
+
+  return categories.map((category) => ({
+    params: { category },
+    props: {
+      category,
+      posts: posts
+        .filter((post) => post.data.category === category)
+        .sort((a, b) => b.data.date.getTime() - a.data.date.getTime()),
+    },
+  }));
+}
+
+const { category, posts } = Astro.props;
+---
+
+<PostLayout title={`分类：${category}`}>
+  {
+    posts.map((post) => (
+      <p>
+        {post.data.date.toISOString().slice(0, 10)}{" "}
+        <a href={`/${post.data.permalink}/`}>{post.data.title}</a>
+      </p>
+    ))
+  }
+</PostLayout>

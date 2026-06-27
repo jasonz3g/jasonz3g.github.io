@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+import PostLayout from "../../../../layouts/PostLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  const groups = new Map<string, typeof posts>();
+
+  for (const post of posts) {
+    const year = String(post.data.date.getFullYear());
+    const month = String(post.data.date.getMonth() + 1).padStart(2, "0");
+    const key = `${year}/${month}`;
+    groups.set(key, [...(groups.get(key) ?? []), post]);
+  }
+
+  return [...groups.entries()].map(([key, groupPosts]) => {
+    const [year, month] = key.split("/");
+    return {
+      params: { year, month },
+      props: {
+        year,
+        month,
+        posts: groupPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime()),
+      },
+    };
+  });
+}
+
+const { year, month, posts } = Astro.props;
+---
+
+<PostLayout title={`${year} 年 ${month} 月归档`}>
+  {
+    posts.map((post) => (
+      <p>
+        {post.data.date.toISOString().slice(0, 10)}{" "}
+        <a href={`/${post.data.permalink}/`}>{post.data.title}</a>
+      </p>
+    ))
+  }
+</PostLayout>

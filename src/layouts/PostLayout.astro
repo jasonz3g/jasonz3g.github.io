@@ -1,0 +1,17 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<BaseLayout title={title} stylesheets={["/css/post.css"]}>
+  　　<div class="inner">
+    <h2>{title}</h2>
+    <slot />
+    <p><span>↶ </span><a href="/">返回首页</a><span></span></p>
+  </div>
+</BaseLayout>

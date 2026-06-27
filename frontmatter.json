@@ -1,0 +1,14 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.framework.id": "astro",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "Blog",
+      "path": "[[workspace]]/src/content/blog"
+    }
+  ],
+  "frontMatter.content.publicFolder": "public",
+  "frontMatter.content.preview.host": "http://127.0.0.1:4321",
+  "frontMatter.media.folder": "img",
+  "frontMatter.dashboard.content.cardTags": "category"
+}

@@ -1,0 +1,26 @@
+---
+interface Props {
+  title: string;
+  stylesheets?: string[];
+}
+
+const { title, stylesheets = [] } = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.5" />
+    {stylesheets.map((href) => <link rel="stylesheet" href={href} />)}
+    <link rel="icon" href="/favicon.ico" />
+    <title>{title}</title>
+    <meta name="generator" content="Astro" />
+    <link rel="alternate" href="/atom.xml" title="山海 's Blog" type="application/atom+xml" />
+  </head>
+  <body>
+    <slot />
+    <script is:inline src="/js/jquery.min.js"></script>
+    <script is:inline src="/js/main.js"></script>
+  </body>
+</html>

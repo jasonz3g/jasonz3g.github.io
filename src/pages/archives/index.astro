@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+import PostLayout from "../../layouts/PostLayout.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+---
+
+<PostLayout title="归档">
+  {
+    posts.map((post) => (
+      <p>
+        {post.data.date.toISOString().slice(0, 10)}{" "}
+        <a href={`/${post.data.permalink}/`}>{post.data.title}</a>
+      </p>
+    ))
+  }
+</PostLayout>
